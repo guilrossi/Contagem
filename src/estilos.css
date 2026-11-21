@@ -1,0 +1,235 @@
+:root {
+  color-scheme: dark;
+  --fundo: #0b0b0c;
+  --painel: #18181b;
+  --borda: #2f2f35;
+  --texto: #f4f4f5;
+  --fraco: #a1a1aa;
+  --verde: #22c55e;
+  --verde-texto: #052e16;
+  --alerta: #facc15;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.tela {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
+}
+
+.topo {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 8px 16px;
+  background: var(--painel);
+}
+
+.contador {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.contador .numero {
+  font-size: 44px;
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  color: var(--verde);
+}
+
+.contador .rotulo {
+  font-size: 18px;
+}
+
+.resumo {
+  flex: 1;
+  min-width: 0;
+  font-size: 15px;
+  text-align: right;
+}
+
+.tecnico {
+  color: var(--fraco);
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-variant-numeric: tabular-nums;
+}
+
+.icone {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--texto);
+  font-size: 22px;
+}
+
+.ajustes {
+  display: flex;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--painel);
+  border-top: 1px solid var(--borda);
+}
+
+.ajustes label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--fraco);
+}
+
+.ajustes select {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--borda);
+  background: var(--fundo);
+  color: var(--texto);
+  font-size: 16px;
+  padding: 0 8px;
+}
+
+.visor {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #000;
+}
+
+.visor video,
+.visor canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.capa {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 24px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+  background: rgba(0, 0, 0, 0.85);
+}
+
+.capa p {
+  margin: 0;
+  max-width: 32ch;
+}
+
+.capa .botao {
+  flex: none;
+  width: min(100%, 320px);
+}
+
+.erro {
+  color: var(--alerta);
+}
+
+.faixa {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  top: 16px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  font-size: 16px;
+}
+
+.faixa.aviso {
+  color: var(--alerta);
+}
+
+.base {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 16px 14px;
+  background: var(--painel);
+}
+
+.ultima {
+  font-size: 15px;
+  color: var(--fraco);
+  min-height: 20px;
+  font-variant-numeric: tabular-nums;
+}
+
+.ultima strong {
+  color: var(--texto);
+}
+
+.botoes {
+  display: flex;
+  gap: 8px;
+}
+
+.botao {
+  flex: 1;
+  min-height: 60px;
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 14px;
+  background: #27272a;
+  color: var(--texto);
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.botao:active:not(:disabled) {
+  filter: brightness(1.3);
+}
+
+.botao:disabled {
+  opacity: 0.4;
+}
+
+.botao.principal {
+  background: var(--verde);
+  border-color: var(--verde);
+  color: var(--verde-texto);
+}
+
+.botao.discreto {
+  background: transparent;
+  font-weight: 500;
+}

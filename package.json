@@ -1,0 +1,25 @@
+{
+  "name": "contagem",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Contagem de estoque por câmera - piloto Grupo Rossi",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview --host",
+    "test": "vitest run",
+    "test:camera": "node testes/camera-simulada.mjs"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zxing-wasm": "^3.1.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-basic-ssl": "^2.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.1"
+  }
+}
